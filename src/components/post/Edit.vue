@@ -60,6 +60,7 @@ export default {
 
       axios
           .put(`${server.baseURL}/blog/edit?postID=${this.id}`, postData)
+          // eslint-disable-next-line no-unused-vars
           .then(data => {
             router.push({ name: "home" });
           });
