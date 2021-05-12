@@ -2,11 +2,11 @@
   <div>
 
     <div class="text-center">
-      <h1>Nest Blog Tutorial</h1>
-      <p> This is the description of the blog built with Nest.js, Vue.js and MongoDB</p>
+      <h1>Блог Ивана и захара</h1>
+      <p> Функционал блога сделан с помощью Nest.js, Vue.js и MongoDB</p>
 
       <div v-if="posts.length === 0">
-        <h2> No post found at the moment </h2>
+        <h2> В данный момент постов нет </h2>
       </div>
     </div>
 
@@ -15,18 +15,18 @@
         <div class="card mb-4 shadow-sm">
           <div class="card-body">
             <h2 class="card-img-top">{{ post.title }}</h2>
-            <p class="card-text">{{ post.body }}</p>
+            <p class="card-text">{{ post.description }}</p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group" style="margin-bottom: 20px;">
-                <router-link :to="{name: 'Post', params: {id: post._id}}" class="btn btn-sm btn-outline-secondary">View Post </router-link>
-                <router-link :to="{name: 'Edit', params: {id: post._id}}" class="btn btn-sm btn-outline-secondary">Edit Post </router-link>
-                <button class="btn btn-sm btn-outline-secondary" v-on:click="deletePost(post._id)">Delete Post</button>
+                <router-link :to="{name: 'Post', params: {id: post._id}}" class="btn btn-sm btn-outline-secondary">Подробнее </router-link>
+                <router-link :to="{name: 'Edit', params: {id: post._id}}" class="btn btn-sm btn-outline-secondary">Редактировать </router-link>
+                <button class="btn btn-sm btn-outline-secondary" v-on:click="deletePost(post._id)">Удалить</button>
               </div>
             </div>
 
             <div class="card-footer">
-              <small class="text-muted">Posted on: {{ post.date_posted}}</small><br/>
-              <small class="text-muted">by: {{ post.author}}</small>
+              <small class="text-muted">Создан: {{ post.date_posted}}</small><br/>
+              <small class="text-muted">Автор: {{ post.author}}</small>
             </div>
 
           </div>
